@@ -4,6 +4,10 @@
 #define DEBUGLOG Http_DEBUGLOG
 Log DEBUGLOG = logger.log("HTTP");
 
+#ifdef __LINUX__
+#include <string.h>
+#endif
+
 #ifdef __PS4__
 
 #include <orbis/Http.h>

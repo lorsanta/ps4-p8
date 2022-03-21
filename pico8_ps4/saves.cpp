@@ -8,6 +8,10 @@
 #define SAVE_FOLDER "../p8-saves"
 #endif
 
+#ifdef __LINUX__
+#include <string.h>
+#endif
+
 #define PERSISTENT_SIZE 256
 
 #define DEBUGLOG Saves_DEBUGLOG

@@ -14,3 +14,4 @@ ps4_int
 /p8-savestates/*
 !.gitkeep
 mac_build
+*/linux_build/*

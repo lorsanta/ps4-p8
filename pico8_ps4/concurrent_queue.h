@@ -6,6 +6,11 @@
 #include<chrono>
 #include<mutex>
 
+#ifdef __LINUX__
+#include <condition_variable>
+#include <atomic>
+#endif
+
 template<typename dataType>
 class ConcurrentQueue
 {
@@ -106,5 +111,4 @@ public:
     {
         return m_forceExit.load();
     }
-
 };

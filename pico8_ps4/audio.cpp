@@ -141,7 +141,11 @@ void generate_next_samples(
 		// Frequency
 		float freq_offset = inner_offset;
 		if (vibrato) {
+			#ifdef __LINUX__
+			freq_offset = sinf(4 * inner_offset * 2 * M_PI - M_PI / 4) / 2;
+			#else
 			freq_offset = std::sinf(4 * inner_offset * 2 * M_PI - M_PI / 4) / 2;
+			#endif
 		}
 		float current_freq = lerp(f0, ff, freq_offset);
 

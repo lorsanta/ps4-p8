@@ -1,6 +1,10 @@
 #include "memory.h"
 #include "log.h"
 
+#ifdef __LINUX__
+#include <string.h>
+#endif
+
 unsigned char p8_memory[P8_TOTAL_MEMORY];
 
 #define DEBUGLOG Memory_DEBUGLOG

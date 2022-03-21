@@ -1,4 +1,4 @@
-intdir=mac_build
+intdir=linux_build
 
 mkdir $intdir
 
@@ -14,7 +14,7 @@ for file in *.cpp; do
 done
 
 if [ "$1" != "skiprun" ]; then
-  echo "clang++ mac_build/*.o ../lua/mac_build/*.o ../libfixmath/mac_build/*.o -lSDL2 -lcurl -lpthread -o \"$intdir/ps4-p8\""
-  clang++ mac_build/*.o ../lua/mac_build/*.o ../libfixmath/mac_build/*.o -lSDL2 -lcurl -lpthread -o "$intdir/ps4-p8"
+  echo "clang++ $intdir/*.o ../lua/$intdir/*.o ../libfixmath/$intdir/*.o -lSDL2 -lcurl -lpthread -o \"$intdir/ps4-p8\""
+  clang++ $intdir/*.o ../lua/$intdir/*.o ../libfixmath/$intdir/*.o -lSDL2 -lcurl -lpthread -o "$intdir/ps4-p8"
   "./$intdir/ps4-p8"
 fi
